@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER" exported="true"/>
+	<classpathentry sourcepath="C:/Users/rhuanca/.gradle/cache/junit/junit/sources/junit-4.8.2-sources.jar" kind="lib" path="C:/Users/rhuanca/.gradle/cache/junit/junit/jars/junit-4.8.2.jar" exported="true"/>
+</classpath>
