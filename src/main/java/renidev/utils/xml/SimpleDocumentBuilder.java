@@ -10,6 +10,11 @@ import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
+/**
+ * This class helps to create a instance of a DOM document instance
+ * simplifying the way to create it.
+ * @author Renan Huanca
+ */
 public class SimpleDocumentBuilder {
     private static DocumentBuilder documentBuilder;
 
@@ -31,13 +36,9 @@ public class SimpleDocumentBuilder {
         Document doc = null;
         try {
             doc = documentBuilder.parse(new ByteArrayInputStream(xml.getBytes()));
-        } catch (IOException e) {
+        } catch (Exception e) {
             handleException(e);
-        } catch (SAXParseException e) {
-            handleException(e);
-        } catch (SAXException e) {
-            handleException(e);
-        }
+        } 
         return doc;
     }
 
@@ -50,11 +51,9 @@ public class SimpleDocumentBuilder {
         Document doc = null;
         try {
             doc = documentBuilder.parse(stream);
-        } catch (SAXException e) {
+        } catch (Exception e) {
             handleException(e);
-        } catch (IOException e) {
-            handleException(e);
-        }
+        } 
         return doc;
     }
     
@@ -67,6 +66,8 @@ public class SimpleDocumentBuilder {
                     exception.getLineNumber() + " - " + e.getMessage(), e);
         } else if ( e instanceof SAXException) {
             throw new RuntimeException("Unable to parse xml - " + e.getMessage(), e);
-        } 
+        } else {
+            throw new RuntimeException(e);
+        }
     }
 }
